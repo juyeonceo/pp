@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUXURY PRESTIGE | YOUR FOCUS IS YOUR FORTUNE</title>
+  <meta name="description" content="황금색과 벨벳보라색의 조화로운 최고급 럭셔리 하이엔드 솔루션. YOUR FOCUS IS YOUR FORTUNE.">
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%231B0B2B' stroke='%23D4AF37' stroke-width='4'/><polygon points='50,20 62,42 86,45 68,62 73,86 50,73 27,86 32,62 14,45 38,42' fill='%23D4AF37'/></svg>">
+
+  <!-- Google Fonts: Cinzel, Cormorant Garamond, Outfit, Noto Serif KR -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Noto+Serif+KR:wght@300;400;600;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP & Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- Three.js for interactive Luxury 3D Hero Particles -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Custom Luxury Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Noise Overlay for Cinematic Texture -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Ambient Luxury Glow Orbs -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- HEADER -->
+  <header class="luxury-header" id="header">
+    <div class="header-inner container">
+      <!-- Logo Placeholder -->
+      <a href="#hero" class="brand-logo" aria-label="Company Home">
+        <div class="logo-emblem">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="28" stroke="url(#goldGradientLogo)" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <polygon points="30,10 36,24 51,26 40,37 43,51 30,44 17,51 20,37 9,26 24,24" fill="url(#goldGradientLogo)" opacity="0.9"/>
+            <circle cx="30" cy="30" r="7" fill="url(#velvetGradientLogo)"/>
+            <defs>
+              <linearGradient id="goldGradientLogo" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FFF3C4"/>
+                <stop offset="40%" stop-color="#D4AF37"/>
+                <stop offset="70%" stop-color="#AA771C"/>
+                <stop offset="100%" stop-color="#F7E298"/>
+              </linearGradient>
+              <radialGradient id="velvetGradientLogo" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#7B2CBF"/>
+                <stop offset="100%" stop-color="#1B042F"/>
+              </radialGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="logo-text-group">
+          <span class="logo-title">[COMPANY NAME]</span>
+          <span class="logo-subtitle">HAUTE EXCELLENCE</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">Philosophy</a></li>
+          <li><a href="#services" class="nav-link">Expertise</a></li>
+          <li><a href="#showcase" class="nav-link">Showcase</a></li>
+          <li><a href="#vision" class="nav-link">Vision</a></li>
+          <li><a href="#contact" class="nav-link">Inquiries</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Group: Theme Toggle & Inquire Button -->
+      <div class="header-actions">
+        <!-- Light / Dark Mode Toggle Button -->
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="라이트/다크 모드 전환">
+          <div class="theme-toggle-track">
+            <span class="icon-moon"><i data-lucide="moon"></i></span>
+            <span class="icon-sun"><i data-lucide="sun"></i></span>
+            <div class="theme-thumb"></div>
+          </div>
+        </button>
+
+        <a href="#contact" class="btn-gold-outline header-cta">
+          <span>Private Concierge</span>
+          <div class="btn-flare"></div>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="메뉴 열기">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <!-- Three.js 3D Interactive Canvas -->
+      <canvas id="heroCanvas" class="hero-canvas"></canvas>
+
+      <!-- Royal Golden Dust & Vignette -->
+      <div class="hero-vignette"></div>
+
+      <div class="container hero-content">
+        <div class="hero-crest-badge" data-parallax="0.2">
+          <div class="crest-line"></div>
+          <span class="crest-text">THE MAJESTY OF AMBITION</span>
+          <div class="crest-line"></div>
+        </div>
+
+        <h1 class="hero-title" id="heroTitle">
+          <span class="title-line"><span class="title-word">YOUR</span> <span class="title-word gold-gradient-text">FOCUS</span></span>
+          <span class="title-line"><span class="title-word">IS</span> <span class="title-word">YOUR</span></span>
+          <span class="title-line"><span class="title-word velvet-glow-text">FORTUNE</span></span>
+        </h1>
+
+        <p class="hero-description" data-parallax="0.1">
+          탁월한 집중이 창조하는 무한한 영예와 가치. 벨벳 보라의 고결한 품격과 황금빛 찬란한 비전으로 시대를 선도하는 최고급 프리미엄 파트너십을 선사합니다.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#about" class="btn-luxury-gold">
+            <span class="btn-text">EXPLORE THE MAJESTY</span>
+            <span class="btn-icon"><i data-lucide="arrow-down-right"></i></span>
+            <div class="btn-gold-shine"></div>
+          </a>
+          <a href="#contact" class="btn-luxury-velvet">
+            <span class="btn-text">VIP CONSULTATION</span>
+            <div class="btn-velvet-sheen"></div>
+          </a>
+        </div>
+
+        <!-- Hero Status Ticker / Floating Stats -->
+        <div class="hero-stats-bar" data-parallax="0.15">
+          <div class="stat-pill">
+            <span class="stat-num">$12.8B+</span>
+            <span class="stat-desc">Curated Value</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-pill">
+            <span class="stat-num">99.8%</span>
+            <span class="stat-desc">Client Devotion</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-pill">
+            <span class="stat-num">Global Top 1%</span>
+            <span class="stat-desc">Prestige Network</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="hero-scroll-indicator" id="scrollIndicator">
+        <div class="mouse-icon">
+          <div class="wheel"></div>
+        </div>
+        <span class="scroll-label">SCROLL TO ASCEND</span>
+      </div>
+    </section>
+
+    <!-- SECTION: PHILOSOPHY (ABOUT & MANIFESTO) -->
+    <section class="section philosophy-section" id="about">
+      <div class="container">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>ESTHÉTIQUE & PHILOSOPHIE</span>
+        </div>
+
+        <div class="philosophy-grid">
+          <div class="philosophy-left" data-parallax="0.1">
+            <h2 class="section-title">
+              순수한 벨벳의 깊이,<br>
+              <span class="gold-gradient-text">황금빛 승리의 연금술</span>
+            </h2>
+            <div class="gold-divider"></div>
+            <p class="section-lead">
+              우리는 진정한 부와 명성이 단순한 숫자가 아닌, 확고한 집중(Focus)과 타협 없는 안목에서 비롯된다고 믿습니다.
+            </p>
+            <p class="body-text">
+              벨벳 보라색은 시대를 관통하는 군주의 위엄과 비밀스러운 지성을 상징하며, 정교하게 세공된 순금은 불변의 가치와 미래를 밝히는 등대를 의미합니다.
+              우리는 전 세계 최정상 리더와 헤리티지 가문을 위해 범접할 수 없는 품격의 브랜딩과 자산 설계를 실현합니다.
+            </p>
+
+            <div class="quote-signature-box">
+              <blockquote class="manifesto-quote">
+                “Where the deepest focus converges, the greatest fortune blossoms.”
+              </blockquote>
+              <div class="signature-line">
+                <span class="sig-name">Founding Directorate</span>
+                <span class="sig-title">The Royal Executive Council</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="philosophy-right">
+            <!-- 3D Luxury Glass Card with Parallax Stacking -->
+            <div class="luxury-stacked-card card-primary" data-speed="0.8">
+              <div class="card-glow"></div>
+              <div class="card-inner">
+                <div class="crest-seal">
+                  <i data-lucide="crown"></i>
+                </div>
+                <h3 class="card-heading">The Royal Standard</h3>
+                <p class="card-detail">
+                  타협 없는 미학적 완성도와 엄격한 프로토콜을 통과한 프라이빗 솔루션. 전 세계 100인 이하의 한정된 고객만을 위한 비스포크 아키텍처.
+                </p>
+                <div class="card-metrics">
+                  <div class="metric-item">
+                    <span class="metric-val counter" data-target="99.9">0</span>%
+                    <span class="metric-lbl">Discretion</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-val counter" data-target="380">0</span>+
+                    <span class="metric-lbl">Legacy Deals</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="luxury-stacked-card card-secondary" data-speed="1.2">
+              <div class="card-inner">
+                <div class="crest-seal seal-gold">
+                  <i data-lucide="shield-check"></i>
+                </div>
+                <h3 class="card-heading">Unwavering Integrity</h3>
+                <p class="card-detail">
+                  시장의 풍파 속에서도 흔들리지 않는 견고한 신뢰. 보이지 않는 디테일 하나까지 황금빛 정교함으로 조율합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: EXPERTISE & SERVICES -->
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge centered">
+            <span class="badge-dot"></span>
+            <span>PILLARS OF EXCELLENCE</span>
+          </div>
+          <h2 class="section-title">
+            최고만을 위한 <span class="gold-gradient-text">4대 하이엔드 솔루션</span>
+          </h2>
+          <p class="section-subtitle">
+            어떤 영역에서도 범접할 수 없는 차별화된 가치를 창조하는 프라이빗 포트폴리오
+          </p>
+        </div>
+
+        <div class="services-cards-grid">
+          <!-- Card 1 -->
+          <div class="service-card" data-tilt>
+            <div class="service-border-glow"></div>
+            <div class="service-card-body">
+              <div class="service-icon-box">
+                <i data-lucide="compass"></i>
+              </div>
+              <span class="service-num">PILLAR 01</span>
+              <h3 class="service-title">Strategic Vision Architecture</h3>
+              <p class="service-desc">
+                빅데이터와 거시경제적 통찰을 융합하여 불확실성 속에서 가장 명확하고 견고한 성장 로드맵을 설계합니다.
+              </p>
+              <ul class="service-features">
+                <li><i data-lucide="check"></i> 글로벌 마켓 침투 전략</li>
+                <li><i data-lucide="check"></i> 넥스트 유니콘 포트폴리오 진단</li>
+                <li><i data-lucide="check"></i> C-Suite 전담 의사결정 시뮬레이션</li>
+              </ul>
+              <div class="service-footer">
+                <span class="service-learn">DISCOVER MORE <i data-lucide="chevron-right"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="service-card highlight" data-tilt>
+            <div class="service-border-glow"></div>
+            <div class="featured-badge">MOST REVERED</div>
+            <div class="service-card-body">
+              <div class="service-icon-box">
+                <i data-lucide="gem"></i>
+              </div>
+              <span class="service-num">PILLAR 02</span>
+              <h3 class="service-title">Haute Brand & Prestige Elevation</h3>
+              <p class="service-desc">
+                단순한 제품이나 기업을 넘어, 세대를 거쳐 칭송받는 독보적 럭셔리 헤리티지 브랜드를 구축합니다.
+              </p>
+              <ul class="service-features">
+                <li><i data-lucide="check"></i> 로열 아이덴티티 & 비주얼 랑그</li>
+                <li><i data-lucide="check"></i> 프라이빗 VIP 살롱 & 론칭 익스피리언스</li>
+                <li><i data-lucide="check"></i> 감각적 스토리텔링 & 럭셔리 패키징</li>
+              </ul>
+              <div class="service-footer">
+                <span class="service-learn">DISCOVER MORE <i data-lucide="chevron-right"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card" data-tilt>
+            <div class="service-border-glow"></div>
+            <div class="service-card-body">
+              <div class="service-icon-box">
+                <i data-lucide="globe-2"></i>
+              </div>
+              <span class="service-num">PILLAR 03</span>
+              <h3 class="service-title">Global Sovereign Expansion</h3>
+              <p class="service-desc">
+                취리히, 런던, 싱가포르, 두바이, 뉴욕을 연결하는 최상위 엘리트 네트워크를 통한 글로벌 영토 확장.
+              </p>
+              <ul class="service-features">
+                <li><i data-lucide="check"></i> 다국가 규제 및 조세 최적화 지원</li>
+                <li><i data-lucide="check"></i> 크로스보더 M&A 및 전략적 얼라이언스</li>
+                <li><i data-lucide="check"></i> 해외 기관투자자 독점 라운드테이블</li>
+              </ul>
+              <div class="service-footer">
+                <span class="service-learn">DISCOVER MORE <i data-lucide="chevron-right"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="service-card" data-tilt>
+            <div class="service-border-glow"></div>
+            <div class="service-card-body">
+              <div class="service-icon-box">
+                <i data-lucide="sparkles"></i>
+              </div>
+              <span class="service-num">PILLAR 04</span>
+              <h3 class="service-title">Private Concierge & Legacy Custody</h3>
+              <p class="service-desc">
+                가문과 기업의 지속 가능한 번영을 위해 1:1 전담 컨시어지가 24/7 밀착하여 완벽한 케어를 제공합니다.
+              </p>
+              <ul class="service-features">
+                <li><i data-lucide="check"></i> 차세대 리더십 승계 및 거버넌스</li>
+                <li><i data-lucide="check"></i> 아트 & 하이엔드 콜렉터블 어드바이저리</li>
+                <li><i data-lucide="check"></i> 암호화된 프라이빗 패밀리 오피스 시스템</li>
+              </ul>
+              <div class="service-footer">
+                <span class="service-learn">DISCOVER MORE <i data-lucide="chevron-right"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: PARALLAX SHOWCASE / MASTERPIECES -->
+    <section class="section showcase-section" id="showcase">
+      <div class="container">
+        <div class="showcase-header">
+          <div>
+            <div class="section-badge">
+              <span class="badge-dot"></span>
+              <span>CURATED MASTERPIECES</span>
+            </div>
+            <h2 class="section-title">
+              명성의 궤적, <span class="gold-gradient-text">독보적 포트폴리오</span>
+            </h2>
+          </div>
+          <div class="showcase-nav-desc">
+            스크롤에 따라 깊이 있게 반응하는 레이어와 정교한 디테일을 경험해 보세요.
+          </div>
+        </div>
+
+        <div class="parallax-showcase-gallery">
+          <!-- Item 1 -->
+          <div class="showcase-item" data-parallax-item>
+            <div class="showcase-media-wrap">
+              <div class="showcase-bg-layer layer-1">
+                <div class="gold-mesh-pattern"></div>
+                <div class="showcase-symbol"><i data-lucide="coins"></i></div>
+              </div>
+              <div class="showcase-overlay"></div>
+              <div class="showcase-tag">SOVEREIGN WEALTH</div>
+            </div>
+            <div class="showcase-info">
+              <span class="showcase-meta">GENEVA &bull; 2026 INITIATIVE</span>
+              <h3 class="showcase-title">Aethelgard Sovereign Trust</h3>
+              <p class="showcase-text">
+                초고액 가문을 위한 멀티 에셋 다각화 및 스위스 볼트 기반 하이브리드 헤지 구조 설계.
+              </p>
+              <div class="showcase-stat">
+                <span class="stat-highlight">+184%</span>
+                <span class="stat-name">Capital Preservation Alpha</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="showcase-item reverse" data-parallax-item>
+            <div class="showcase-media-wrap">
+              <div class="showcase-bg-layer layer-2">
+                <div class="velvet-crystal-pattern"></div>
+                <div class="showcase-symbol"><i data-lucide="building-2"></i></div>
+              </div>
+              <div class="showcase-overlay"></div>
+              <div class="showcase-tag">PRESTIGE REAL ESTATE</div>
+            </div>
+            <div class="showcase-info">
+              <span class="showcase-meta">LONDON MAYFAIR &bull; ARCHITECTURE</span>
+              <h3 class="showcase-title">The Aurelia Residences</h3>
+              <p class="showcase-text">
+                빅토리아 헤리티지와 벨벳 & 골드 인테리어 미학이 결합된 런던 메이페어의 랜드마크 프라이빗 클럽하우스.
+              </p>
+              <div class="showcase-stat">
+                <span class="stat-highlight">100% Sold</span>
+                <span class="stat-name">Private Pre-Sale Round</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="showcase-item" data-parallax-item>
+            <div class="showcase-media-wrap">
+              <div class="showcase-bg-layer layer-3">
+                <div class="gold-ring-pattern"></div>
+                <div class="showcase-symbol"><i data-lucide="award"></i></div>
+              </div>
+              <div class="showcase-overlay"></div>
+              <div class="showcase-tag">HAUTE HORLOGERIE</div>
+            </div>
+            <div class="showcase-info">
+              <span class="showcase-meta">PARIS &bull; LUXURY BRANDING</span>
+              <h3 class="showcase-title">Chrono Royale Imperiale</h3>
+              <p class="showcase-text">
+                장인의 핸드메이드 투르비용 시계 브랜드의 글로벌 포지셔닝 및 벨벳 퍼플 다이얼 리미티드 에디션 총괄 디렉팅.
+              </p>
+              <div class="showcase-stat">
+                <span class="stat-highlight">24 Pcs Only</span>
+                <span class="stat-name">Global Allocation Finished</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: PINNED VISION / QUOTE (YOUR FOCUS IS YOUR FORTUNE) -->
+    <section class="section vision-section" id="vision">
+      <div class="vision-pin-container" id="visionPin">
+        <div class="vision-backdrop"></div>
+        <div class="vision-emblem-bg">
+          <svg viewBox="0 0 200 200" fill="none">
+            <circle cx="100" cy="100" r="95" stroke="currentColor" stroke-width="0.75" stroke-dasharray="6 3"/>
+            <circle cx="100" cy="100" r="70" stroke="currentColor" stroke-width="0.5"/>
+            <polygon points="100,20 120,60 170,70 135,110 145,160 100,135 55,160 65,110 30,70 80,60" stroke="currentColor" stroke-width="0.75"/>
+          </svg>
+        </div>
+
+        <div class="container vision-content">
+          <span class="vision-subtitle-badge">THE SUPREME AXIOM</span>
+          
+          <div class="vision-scrub-text">
+            <span class="scrub-word">WHERE</span>
+            <span class="scrub-word">YOUR</span>
+            <span class="scrub-word highlight-gold">FOCUS</span>
+            <span class="scrub-word">LIES,</span>
+            <br>
+            <span class="scrub-word">THERE</span>
+            <span class="scrub-word">YOUR</span>
+            <span class="scrub-word highlight-velvet">FORTUNE</span>
+            <span class="scrub-word">SHALL</span>
+            <span class="scrub-word highlight-gold">REIGN.</span>
+          </div>
+
+          <p class="vision-statement">
+            산만한 세계 속에서 단 하나의 본질에 집중하는 힘. 그것이 곧 시대를 지배하는 불멸의 부(Fortune)가 됩니다.
+          </p>
+
+          <div class="vision-counter-row">
+            <div class="v-counter-col">
+              <span class="v-num counter" data-target="15">0</span><span class="v-unit">YRS</span>
+              <span class="v-desc">Of Unbroken Excellence</span>
+            </div>
+            <div class="v-counter-col">
+              <span class="v-num counter" data-target="42">0</span><span class="v-unit">NATIONS</span>
+              <span class="v-desc">Global Royal Reach</span>
+            </div>
+            <div class="v-counter-col">
+              <span class="v-num counter" data-target="99">0</span><span class="v-unit">%</span>
+              <span class="v-desc">Invitation Only Retain</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: PRIVATE CONTACT / INQUIRY -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card-wrapper">
+          <div class="contact-card-ambient"></div>
+          <div class="contact-card-grid">
+            
+            <!-- Contact Left: VIP Lounge Info -->
+            <div class="contact-info-side">
+              <div class="section-badge">
+                <span class="badge-dot"></span>
+                <span>CONFIDENTIAL ADVISORY</span>
+              </div>
+              <h2 class="contact-title">
+                최고의 영예를 향한<br>
+                <span class="gold-gradient-text">프라이빗 세션 신청</span>
+              </h2>
+              <p class="contact-desc">
+                귀하의 위대한 여정을 위해 준비된 프라이빗 데스크에 문의하십시오. 모든 상담 내용은 최고 수준의 비밀 유지 협약(NDA)에 따라 엄격히 보호됩니다.
+              </p>
+
+              <div class="contact-details-list">
+                <div class="detail-item">
+                  <div class="detail-icon"><i data-lucide="map-pin"></i></div>
+                  <div>
+                    <span class="detail-label">Grand Headquarters</span>
+                    <span class="detail-value">Seoul Royal Quarter & Geneva Executive Suites</span>
+                  </div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="detail-icon"><i data-lucide="mail"></i></div>
+                  <div>
+                    <span class="detail-label">Direct Secretarial Desk</span>
+                    <span class="detail-value">concierge@fortune-luxury.example</span>
+                  </div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="detail-icon"><i data-lucide="phone-call"></i></div>
+                  <div>
+                    <span class="detail-label">Private Hotline</span>
+                    <span class="detail-value">+82 (0)2 888 7777 (VIP Direct)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Brand Seal Badge -->
+              <div class="brand-seal-box">
+                <div class="seal-icon"><i data-lucide="shield"></i></div>
+                <div class="seal-text">
+                  <strong>Strict NDA Protocol</strong>
+                  <span>ISO 27001 Certified Confidential Infrastructure</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Right: Inquiry Form -->
+            <div class="contact-form-side">
+              <form class="luxury-form" id="inquiryForm" onsubmit="event.preventDefault(); handleFormSubmit();">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="clientName">성함 / 존함</label>
+                    <input type="text" id="clientName" required placeholder="예: 홍길동 회장 / 대표" class="luxury-input">
+                  </div>
+                  <div class="form-group">
+                    <label for="clientOrg">소속 기업 / 패밀리 오피스</label>
+                    <input type="text" id="clientOrg" placeholder="[COMPANY NAME] 또는 법인명" class="luxury-input">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="clientEmail">이메일 (공식/프라이빗)</label>
+                    <input type="email" id="clientEmail" required placeholder="vip@domain.com" class="luxury-input">
+                  </div>
+                  <div class="form-group">
+                    <label for="clientPhone">연락처</label>
+                    <input type="tel" id="clientPhone" placeholder="+82 10-0000-0000" class="luxury-input">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="interestService">관심 솔루션 영역</label>
+                  <select id="interestService" class="luxury-input luxury-select">
+                    <option value="strategic">Strategic Vision Architecture</option>
+                    <option value="branding">Haute Brand & Prestige Elevation</option>
+                    <option value="expansion">Global Sovereign Expansion</option>
+                    <option value="concierge">Private Concierge & Legacy Custody</option>
+                    <option value="other">기타 비스포크 자문 의뢰</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="clientMessage">문의 및 요청 사항</label>
+                  <textarea id="clientMessage" rows="4" placeholder="귀하의 비전과 원하시는 프라이빗 세션 일정에 대해 간략히 남겨주십시오." class="luxury-input"></textarea>
+                </div>
+
+                <div class="form-agreement">
+                  <input type="checkbox" id="ndaConsent" required>
+                  <label for="ndaConsent">개인정보 수집 및 VIP 비밀 유지(NDA) 약관에 동의합니다.</label>
+                </div>
+
+                <button type="submit" class="btn-luxury-gold submit-btn" id="submitBtn">
+                  <span class="btn-text">REQUEST PRIVATE CONSULTATION</span>
+                  <span class="btn-icon"><i data-lucide="arrow-right"></i></span>
+                  <div class="btn-gold-shine"></div>
+                </button>
+
+                <div class="form-success-msg" id="formSuccessMsg">
+                  <i data-lucide="check-circle-2"></i>
+                  <span>귀하의 전담 컨시어지 세션 요청이 안전하게 접수되었습니다. 2시간 이내에 전담 비서관이 연락드립니다.</span>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="luxury-footer" id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="logo-emblem">
+              <svg viewBox="0 0 60 60" fill="none" width="40" height="40">
+                <circle cx="30" cy="30" r="28" stroke="url(#goldGradFoot)" stroke-width="1.5" stroke-dasharray="4 2"/>
+                <polygon points="30,10 36,24 51,26 40,37 43,51 30,44 17,51 20,37 9,26 24,24" fill="url(#goldGradFoot)"/>
+                <defs>
+                  <linearGradient id="goldGradFoot" x1="0" y1="0" x2="60" y2="60">
+                    <stop offset="0%" stop-color="#FFF3C4"/>
+                    <stop offset="50%" stop-color="#D4AF37"/>
+                    <stop offset="100%" stop-color="#AA771C"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="logo-text-group">
+              <span class="logo-title">[COMPANY NAME]</span>
+              <span class="logo-subtitle">YOUR FOCUS IS YOUR FORTUNE</span>
+            </div>
+          </div>
+          <p class="footer-tagline">
+            절대적인 집중과 독보적인 미학이 만나는 곳.<br>황금빛 영광의 비전을 고객과 함께 현실로 빚어냅니다.
+          </p>
+        </div>
+
+        <div class="footer-nav-col">
+          <span class="footer-col-title">NAVIGATION</span>
+          <ul class="footer-links">
+            <li><a href="#hero">Home / Top</a></li>
+            <li><a href="#about">Philosophy</a></li>
+            <li><a href="#services">Expertise</a></li>
+            <li><a href="#showcase">Curated Showcase</a></li>
+            <li><a href="#vision">Supreme Axiom</a></li>
+            <li><a href="#contact">Private Inquiries</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <span class="footer-col-title">GLOBAL SUITES</span>
+          <ul class="footer-links">
+            <li><span>Seoul &bull; Cheongdam Heritage Suite</span></li>
+            <li><span>Geneva &bull; Rue du Rhône 42</span></li>
+            <li><span>London &bull; Mayfair Curzon Hall</span></li>
+            <li><span>New York &bull; 5th Avenue Sovereign Tower</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <span class="footer-col-title">LEGAL & ETHICS</span>
+          <ul class="footer-links">
+            <li><a href="#contact">Private Code of Conduct</a></li>
+            <li><a href="#contact">Strict Client Confidentiality</a></li>
+            <li><a href="#contact">Terms of Sovereign Engagement</a></li>
+            <li><a href="#contact">ESG & Royal Stewardship</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">
+          &copy; <span id="currentYear">2026</span> <strong class="gold-text">[COMPANY NAME]</strong>. All Rights Reserved. Designed with Velvet Purple & Royal Gold.
+        </p>
+        <div class="footer-credo">
+          <span>YOUR FOCUS IS YOUR FORTUNE</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING SCROLL TO TOP BUTTON (With Circular Progress Ring) -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="맨 위로 이동">
+    <svg class="progress-ring" width="56" height="56" viewBox="0 0 56 56">
+      <circle class="progress-ring-circle-bg" cx="28" cy="28" r="24"></circle>
+      <circle class="progress-ring-circle" id="progressCircle" cx="28" cy="28" r="24"></circle>
+    </svg>
+    <div class="top-icon">
+      <i data-lucide="chevron-up"></i>
+    </div>
+  </button>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>
